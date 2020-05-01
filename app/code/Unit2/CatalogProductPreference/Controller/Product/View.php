@@ -14,7 +14,7 @@ class View extends \Magento\Framework\App\Action\Action
     public function execute()
     {
         $rawResult = $this->resultFactory->create(ResultFactory::TYPE_RAW);
-        $rawResult->setContents('Hello world');
+        $rawResult->setContents('Hello world!');
         return $rawResult;
     }
 

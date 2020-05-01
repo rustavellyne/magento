@@ -32,6 +32,6 @@ class View extends \Magento\Framework\App\Action\Action
          * Custom code goes here
          */
 
-        return $result;
+        return $result . 'test';
     }
 }

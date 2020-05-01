@@ -1,0 +1,23 @@
+<?php
+$blogViewModel = $block->getData('viewModel');
+?>
+<div class="blog-container"
+     data-bind="scope: 'blog'">
+    <!-- ko template: getTemplate() --><!-- /ko -->
+
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "blog": {
+                        "component": "Magneto_Blog/js/blog",
+                        "title": "Hello World",
+                        "posts": <?= $blogViewModel->getPostsJSON(); ?>
+                    }
+                }
+            }
+        }
+    }
+</script>

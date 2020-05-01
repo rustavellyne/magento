@@ -11,5 +11,9 @@
             <block class="Magento\Framework\View\Element\Template" name="custom_category_layout"
                    template="Unit3_Layout::template.phtml" />
         </referenceContainer>
+        <referenceContainer name="main">
+            <block class="Magento\Framework\View\Element\Template" name="custom_c_layout"
+                   template="Unit3_Layout::template.phtml" />
+        </referenceContainer>
     </body>
 </page>

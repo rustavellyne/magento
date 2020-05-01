@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="magneto_blog_page" resource="default" engine="innodb" comment="Magneto blog post table">
+        <column xsi:type="int" name="post_id" padding="6" unsigned="true"
+                nullable="false"
+                identity="true"
+                comment="Post ID"/>
+        <column xsi:type="int" name="page_id" padding="6" nullable="false" unsigned="true" comment="Page ID" />
+        <column xsi:type="smallint" name="is_post" nullable="false" default="1" comment="Is post" />
+        <column xsi:type="varchar" name="author" length="50" nullable="false" comment="Post author" />
+        <column xsi:type="timestamp" name="publish_date" nullable="false" default="CURRENT_TIMESTAMP" comment="Publish date"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="post_id"/>
+            <column name="page_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="CMS_PAGE_STORE_PAGE_ID_CMS_PAGE_PAGE_ID" table="cms_page_store"
+                    column="page_id" referenceTable="cms_page" referenceColumn="page_id" onDelete="CASCADE"
+        />
+        <index referenceId="CMS_PAGE_STORE_STORE_ID" indexType="btree">
+            <column name="page_id" />
+        </index>
+    </table>
+</schema>
